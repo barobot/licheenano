@@ -8,7 +8,10 @@
 #define __CONFIG_H
 
 #define CONFIG_SUNXI_USB_PHYS 1
-
+#define CONFIG_BOOTCOMMAND "sf probe 0 50000000; " \
+				"sf read 0x80C00000 0x100000 0x4000; " \
+				"sf read 0x80008000 0x110000 0x400000; " \
+				"bootz 0x80008000 - 0x80C00000"
 /*
  * Include common sunxi configuration where most the settings are
  */
